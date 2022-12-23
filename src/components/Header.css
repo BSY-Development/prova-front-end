@@ -1,0 +1,87 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.main-nav {
+    background-color: #0f0e17;
+    display: flex;
+    font-weight: bolder;
+    justify-content: space-between;
+    padding: 2.2% 9.9%;
+}
+
+.main-nav a {
+    align-self: center;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+nav {
+    background-color: #0F0E17;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ul-config {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    opacity: 1.0;
+    border-radius: 3px;
+}
+
+.checkbtn {
+    color: white;
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .ul-config {
+        flex-direction: column;
+        height: 25vh;
+        width: 89%;
+    }
+
+    ul {
+        font-size: 32px;
+        position: fixed;
+        background: rgb(32, 32, 32);
+        top: 5px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    .ul-config {
+        width: 80%;
+    }
+}

@@ -4,9 +4,10 @@ import useTable from "../../hooks/useTable";
 import styles from "./Table.module.css";
 import TableFooter from "./TableFooter";
 
-const Table = ({ data, rowsPerPage }) => {
+const Table = ({ data, rowsPerPage, myActualPage, totalPerson, setMyActualPage }) => {
+    const pages = totalPerson;
     const [page, setPage] = useState(1);
-    const { slice, range } = useTable(data, page, rowsPerPage);
+    const { slice, range } = useTable(data, page, rowsPerPage, pages);
 
     const formatCpf = (v) => {
         v=v.replace(/\D/g,"")
@@ -44,7 +45,7 @@ const Table = ({ data, rowsPerPage }) => {
                     ))}
                 </tbody>
             </table>
-            <TableFooter range={range} slice={slice} setPage={setPage} page={page} />
+            <TableFooter range={range} slice={slice} setPage={setPage} page={page} myActualPage={myActualPage} setMyActualPage={setMyActualPage} />
         </>
     );
 };
